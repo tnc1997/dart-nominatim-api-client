@@ -1,8 +1,8 @@
-// https://nominatim.openstreetmap.org/search?q=legoland&format=jsonv2&addressdetails=1&extratags=1&namedetails=1&polygon_geojson=1
+// https://nominatim.openstreetmap.org/reverse?lat=51.46366965336262&lon=-0.6541751390841174&format=jsonv2&addressdetails=1&extratags=1&namedetails=1&polygon_geojson=1
 
 import 'geo_json.dart';
 
-class SearchResult {
+class ReverseResult {
   Map<String, String>? address;
   String? addressType;
   List<double>? boundingBox;
@@ -25,7 +25,7 @@ class SearchResult {
   int? placeRank;
   String? type;
 
-  SearchResult({
+  ReverseResult({
     this.address,
     this.addressType,
     this.boundingBox,
@@ -49,10 +49,10 @@ class SearchResult {
     this.type,
   });
 
-  factory SearchResult.fromJson(
+  factory ReverseResult.fromJson(
     Map<String, dynamic> json,
   ) {
-    return SearchResult(
+    return ReverseResult(
       address: json['address'] != null
           ? Map<String, String>.from(json['address'])
           : null,
