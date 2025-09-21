@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/tnc1997/dart-nominatim-api-client/compare/v0.1.0...v0.2.0) (2025-09-21)
+
+### Features
+
+* add reverse endpoint ([25d533d](https://github.com/tnc1997/dart-nominatim-api-client/commit/25d533dbee6363a0586223b49b32182725f60d90))
+
+### Code Refactoring
+
+* add reverse result model ([d26fa78](https://github.com/tnc1997/dart-nominatim-api-client/commit/d26fa78916414ba5393c06298d72377324a24004))
+
+### Miscellaneous Chores
+
+* update idea libraries ([2d4965b](https://github.com/tnc1997/dart-nominatim-api-client/commit/2d4965b094c488e91b7a761f1e75b1e628cd21f9))
+
 ## 0.1.0 (2025-09-09)
 
 ### Features
