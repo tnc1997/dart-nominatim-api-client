@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 import 'constants/uri_constants.dart';
 import 'exceptions/nominatim_api_client_exception.dart';
+import 'models/lookup_result.dart';
 import 'models/reverse_result.dart';
 import 'models/search_result.dart';
 
@@ -13,6 +14,49 @@ class NominatimApiClient {
   NominatimApiClient({
     http.Client? client,
   }) : _client = client ?? http.Client();
+
+  /// The lookup API allows you to query the address and other details of one or multiple OSM objects like nodes, ways or relations.
+  Future<List<LookupResult>> lookup(
+    List<String> osmIds, {
+    bool? addressDetails,
+    bool? extraTags,
+    bool? nameDetails,
+    bool? polygonGeoJson,
+    bool? polygonKml,
+    bool? polygonSvg,
+    bool? polygonText,
+    double? polygonThreshold,
+    bool? debug,
+  }) async {
+    final response = await _client.get(
+      Uri.https(
+        authority,
+        '/lookup',
+        {
+          'format': 'jsonv2',
+          'osm_ids': osmIds.join(','),
+          if (addressDetails != null)
+            'addressdetails': addressDetails ? '1' : '0',
+          if (extraTags != null) 'extratags': extraTags ? '1' : '0',
+          if (nameDetails != null) 'namedetails': nameDetails ? '1' : '0',
+          if (polygonGeoJson != null)
+            'polygon_geojson': polygonGeoJson ? '1' : '0',
+          if (polygonKml != null) 'polygon_kml': polygonKml ? '1' : '0',
+          if (polygonSvg != null) 'polygon_svg': polygonSvg ? '1' : '0',
+          if (polygonText != null) 'polygon_text': polygonText ? '1' : '0',
+          if (polygonThreshold != null)
+            'polygon_threshold': polygonThreshold.toString(),
+          if (debug != null) 'debug': debug ? '1' : '0',
+        },
+      ),
+    );
+
+    NominatimApiClientException.checkIsSuccessStatusCode(response);
+
+    return (json.decode(response.body) as List<dynamic>)
+        .map((e) => LookupResult.fromJson(e))
+        .toList();
+  }
 
   /// Reverse geocoding generates an address from a coordinate given as latitude and longitude.
   Future<ReverseResult> reverse(
