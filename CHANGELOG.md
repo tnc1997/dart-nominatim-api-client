@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/tnc1997/dart-nominatim-api-client/compare/v0.2.0...v0.3.0) (2025-09-25)
+
+### Features
+
+* add lookup endpoint ([69e96eb](https://github.com/tnc1997/dart-nominatim-api-client/commit/69e96eba97fbd0cb924286b601723bcde72f8eed))
+
+### Code Refactoring
+
+* add lookup result model ([11390c3](https://github.com/tnc1997/dart-nominatim-api-client/commit/11390c3e7f00ba900341b58d0941f54f3e65a5fc))
+
 ## [0.2.0](https://github.com/tnc1997/dart-nominatim-api-client/compare/v0.1.0...v0.2.0) (2025-09-21)
 
 ### Features
