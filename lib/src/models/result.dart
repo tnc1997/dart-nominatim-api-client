@@ -12,9 +12,9 @@ abstract class Result {
   String? geoSvg;
   String? geoText;
   double? importance;
-  String? lat; // TODO: Convert the lat from a String to a double.
+  double? lat;
   String? licence;
-  String? lon; // TODO: Convert the lon from a String to a double.
+  double? lon;
   String? name;
   Map<String, String>? nameDetails;
   int? osmId;
@@ -59,9 +59,9 @@ abstract class Result {
       'geokml': geoKml,
       'geotext': geoText,
       'importance': importance,
-      'lat': lat,
+      'lat': lat?.toString(),
       'licence': licence,
-      'lon': lon,
+      'lon': lon?.toString(),
       'name': name,
       'namedetails': nameDetails,
       'osm_id': osmId,
