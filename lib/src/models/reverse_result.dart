@@ -1,53 +1,54 @@
 // https://nominatim.openstreetmap.org/reverse?lat=51.46366965336262&lon=-0.6541751390841174&format=jsonv2&addressdetails=1&extratags=1&namedetails=1&polygon_geojson=1
 
 import 'geo_json.dart';
+import 'result.dart';
 
-class ReverseResult {
-  Map<String, String>? address;
-  String? addressType;
-  List<double>? boundingBox;
-  String? category;
-  String? displayName;
-  Map<String, String>? extraTags;
-  GeoJson? geoJson;
-  String? geoKml;
-  String? geoSvg;
-  String? geoText;
-  double? importance;
-  String? lat; // TODO: Convert the lat from a String to a double.
-  String? licence;
-  String? lon; // TODO: Convert the lon from a String to a double.
-  String? name;
-  Map<String, String>? nameDetails;
-  int? osmId;
-  String? osmType;
-  int? placeId;
-  int? placeRank;
-  String? type;
-
+class ReverseResult extends Result {
   ReverseResult({
-    this.address,
-    this.addressType,
-    this.boundingBox,
-    this.category,
-    this.displayName,
-    this.extraTags,
-    this.geoJson,
-    this.geoKml,
-    this.geoSvg,
-    this.geoText,
-    this.importance,
-    this.lat,
-    this.licence,
-    this.lon,
-    this.name,
-    this.nameDetails,
-    this.osmId,
-    this.osmType,
-    this.placeId,
-    this.placeRank,
-    this.type,
-  });
+    Map<String, String>? address,
+    String? addressType,
+    List<double>? boundingBox,
+    String? category,
+    String? displayName,
+    Map<String, String>? extraTags,
+    GeoJson? geoJson,
+    String? geoKml,
+    String? geoSvg,
+    String? geoText,
+    double? importance,
+    String? lat, // TODO: Convert the lat from a String to a double.
+    String? licence,
+    String? lon, // TODO: Convert the lon from a String to a double.
+    String? name,
+    Map<String, String>? nameDetails,
+    int? osmId,
+    String? osmType,
+    int? placeId,
+    int? placeRank,
+    String? type,
+  }) : super(
+          address: address,
+          addressType: addressType,
+          boundingBox: boundingBox,
+          category: category,
+          displayName: displayName,
+          extraTags: extraTags,
+          geoJson: geoJson,
+          geoKml: geoKml,
+          geoSvg: geoSvg,
+          geoText: geoText,
+          importance: importance,
+          lat: lat,
+          licence: licence,
+          lon: lon,
+          name: name,
+          nameDetails: nameDetails,
+          osmId: osmId,
+          osmType: osmType,
+          placeId: placeId,
+          placeRank: placeRank,
+          type: type,
+        );
 
   factory ReverseResult.fromJson(
     Map<String, dynamic> json,
@@ -84,31 +85,5 @@ class ReverseResult {
       placeRank: (json['place_rank'] as num?)?.toInt(),
       type: json['type'] as String?,
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'address': address,
-      'addresstype': addressType,
-      'boundingbox': boundingBox?.map((e) => e.toString()).toList(),
-      'category': category,
-      'display_name': displayName,
-      'extratags': extraTags,
-      'geojson': geoJson?.toJson(),
-      'geokml': geoKml,
-      'geotext': geoText,
-      'importance': importance,
-      'lat': lat,
-      'licence': licence,
-      'lon': lon,
-      'name': name,
-      'namedetails': nameDetails,
-      'osm_id': osmId,
-      'osm_type': osmType,
-      'place_id': placeId,
-      'place_rank': placeRank,
-      'svg': geoSvg,
-      'type': type,
-    };
   }
 }
