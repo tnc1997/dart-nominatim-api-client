@@ -16,9 +16,9 @@ class SearchResult extends Result {
     String? geoSvg,
     String? geoText,
     double? importance,
-    String? lat, // TODO: Convert the lat from a String to a double.
+    double? lat,
     String? licence,
-    String? lon, // TODO: Convert the lon from a String to a double.
+    double? lon,
     String? name,
     Map<String, String>? nameDetails,
     int? osmId,
@@ -72,9 +72,9 @@ class SearchResult extends Result {
       geoSvg: json['svg'] as String?,
       geoText: json['geotext'] as String?,
       importance: (json['importance'] as num?)?.toDouble(),
-      lat: json['lat'] as String?,
+      lat: json['lat'] != null ? double.parse(json['lat'] as String) : null,
       licence: json['licence'] as String?,
-      lon: json['lon'] as String?,
+      lon: json['lon'] != null ? double.parse(json['lon'] as String) : null,
       name: json['name'] as String?,
       nameDetails: json['namedetails'] != null
           ? Map<String, String>.from(json['namedetails'])
