@@ -1,12 +1,12 @@
 class GeoJsonPoint {
   List<double>? boundingBox;
-  List<double> coordinates;
-  String type;
+  List<double>? coordinates;
+  String? type;
 
   GeoJsonPoint({
     this.boundingBox,
-    required this.coordinates,
-    required this.type,
+    this.coordinates,
+    this.type,
   });
 
   factory GeoJsonPoint.fromJson(
@@ -16,10 +16,10 @@ class GeoJsonPoint {
       boundingBox: (json['bbox'] as List<dynamic>?)
           ?.map((e) => (e as num).toDouble())
           .toList(),
-      coordinates: (json['coordinates'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
+      coordinates: (json['coordinates'] as List<dynamic>?)
+          ?.map((e) => (e as num).toDouble())
           .toList(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
     );
   }
 
