@@ -7,6 +7,7 @@ class AddressLine {
   int? osmId;
   String? osmType;
   int? placeId;
+  String? placeType;
   int? rankAddress;
   String? type;
 
@@ -19,6 +20,7 @@ class AddressLine {
     this.osmId,
     this.osmType,
     this.placeId,
+    this.placeType,
     this.rankAddress,
     this.type,
   });
@@ -35,6 +37,7 @@ class AddressLine {
       osmId: (json['osm_id'] as num?)?.toInt(),
       osmType: json['osm_type'] as String?,
       placeId: (json['place_id'] as num?)?.toInt(),
+      placeType: json['place_type'] as String?,
       rankAddress: (json['rank_address'] as num?)?.toInt(),
       type: json['type'] as String?,
     );
@@ -50,6 +53,7 @@ class AddressLine {
       'osm_id': osmId,
       'osm_type': osmType,
       'place_id': placeId,
+      'place_type': placeType,
       'rank_address': rankAddress,
       'type': type,
     };
