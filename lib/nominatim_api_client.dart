@@ -7,6 +7,7 @@ export 'src/exceptions/nominatim_api_client_exception.dart';
 export 'src/models/address_keyword.dart';
 export 'src/models/geo_json.dart';
 export 'src/models/lookup_result.dart';
+export 'src/models/name_keyword.dart';
 export 'src/models/result.dart';
 export 'src/models/reverse_result.dart';
 export 'src/models/search_result.dart';
