@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 import 'constants/uri_constants.dart';
 import 'exceptions/nominatim_api_client_exception.dart';
+import 'models/details_result.dart';
 import 'models/lookup_result.dart';
 import 'models/reverse_result.dart';
 import 'models/search_result.dart';
@@ -14,6 +15,46 @@ class NominatimApiClient {
   NominatimApiClient({
     http.Client? client,
   }) : _client = client ?? http.Client();
+
+  /// Shows all details about a single place saved in the database.
+  Future<DetailsResult> details({
+    String? osmType,
+    String? osmId,
+    String? category,
+    String? placeId,
+    bool? addressDetails,
+    bool? keywords,
+    bool? linkedPlaces,
+    bool? hierarchy,
+    bool? polygonGeoJson,
+    bool? debug,
+  }) async {
+    final response = await _client.get(
+      Uri.https(
+        authority,
+        '/lookup',
+        {
+          'format': 'json',
+          if (osmType != null) 'osmtype': osmType,
+          if (osmId != null) 'osmid': osmId,
+          if (category != null) 'class': category,
+          if (placeId != null) 'place_id': placeId,
+          if (addressDetails != null)
+            'addressdetails': addressDetails ? '1' : '0',
+          if (keywords != null) 'keywords': keywords ? '1' : '0',
+          if (linkedPlaces != null) 'linkedplaces': linkedPlaces ? '1' : '0',
+          if (hierarchy != null) 'hierarchy': hierarchy ? '1' : '0',
+          if (polygonGeoJson != null)
+            'polygon_geojson': polygonGeoJson ? '1' : '0',
+          if (debug != null) 'debug': debug ? '1' : '0',
+        },
+      ),
+    );
+
+    NominatimApiClientException.checkIsSuccessStatusCode(response);
+
+    return DetailsResult.fromJson(json.decode(response.body));
+  }
 
   /// The lookup API allows you to query the address and other details of one or multiple OSM objects like nodes, ways or relations.
   Future<List<LookupResult>> lookup(
