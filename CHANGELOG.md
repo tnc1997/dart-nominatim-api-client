@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.0](https://github.com/tnc1997/dart-nominatim-api-client/compare/v0.3.0...v0.4.0) (2025-10-12)
+
+### ⚠ BREAKING CHANGES
+
+* The keyword model has been converted from a class to an abstract class.
+* The previously required fields in the `GeoJsonPoint` model class are now nullable.
+* The `lat` and `lon` fields have been retyped from `String` to `double`.
+
+### Features
+
+* add details endpoint ([acdd83f](https://github.com/tnc1997/dart-nominatim-api-client/commit/acdd83f48542545322c86ccb254c03916a7bd492))
+
+### Code Refactoring
+
+* add address keyword model ([cdbbeb8](https://github.com/tnc1997/dart-nominatim-api-client/commit/cdbbeb8095a2d1078b7bf1f18ed08dcf17ebe1b0))
+* add address line model ([10e46aa](https://github.com/tnc1997/dart-nominatim-api-client/commit/10e46aa3220807c4fdcc563ca2d24eadd0f93bf0))
+* add base result model ([#3](https://github.com/tnc1997/dart-nominatim-api-client/issues/3)) ([d0adee3](https://github.com/tnc1997/dart-nominatim-api-client/commit/d0adee349aa8fe87d72e07911409478297b984f2))
+* add details result model ([721b9cb](https://github.com/tnc1997/dart-nominatim-api-client/commit/721b9cbbb3660c6b97d132fcbb19429fe006996b))
+* add geo json point model ([e624f82](https://github.com/tnc1997/dart-nominatim-api-client/commit/e624f82e8868db7e23b40559fe42dd6a2e73afac))
+* add keyword model ([1c09084](https://github.com/tnc1997/dart-nominatim-api-client/commit/1c09084368cfb4466aa08f94d5aa731aa9ac7ca0))
+* add name keyword model ([ea055f5](https://github.com/tnc1997/dart-nominatim-api-client/commit/ea055f509f1b04a37eb8e9db9583f09512241534))
+* add nullability to geojson point fields ([#6](https://github.com/tnc1997/dart-nominatim-api-client/issues/6)) ([5086bb6](https://github.com/tnc1997/dart-nominatim-api-client/commit/5086bb6c655e9b7e6686d4bcff08c6f0479b5c33))
+* add place type to address line model ([8b0217d](https://github.com/tnc1997/dart-nominatim-api-client/commit/8b0217de68af316e6ec48aee38f30f61a114f74c))
+* convert keyword model to abstract base class ([c314c25](https://github.com/tnc1997/dart-nominatim-api-client/commit/c314c25d2de117d02d3fda813471631a754aba68))
+* retype lat and lon from string to double ([#4](https://github.com/tnc1997/dart-nominatim-api-client/issues/4)) ([4ace68e](https://github.com/tnc1997/dart-nominatim-api-client/commit/4ace68edb47f8868ad9f75a4c9f1872558779e25))
+
 ## [0.3.0](https://github.com/tnc1997/dart-nominatim-api-client/compare/v0.2.0...v0.3.0) (2025-09-25)
 
 ### Features
