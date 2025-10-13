@@ -27,7 +27,6 @@ class NominatimApiClient {
     bool? linkedPlaces,
     bool? hierarchy,
     bool? polygonGeoJson,
-    bool? debug,
   }) async {
     final response = await _client.get(
       Uri.https(
@@ -46,7 +45,6 @@ class NominatimApiClient {
           if (hierarchy != null) 'hierarchy': hierarchy ? '1' : '0',
           if (polygonGeoJson != null)
             'polygon_geojson': polygonGeoJson ? '1' : '0',
-          if (debug != null) 'debug': debug ? '1' : '0',
         },
       ),
     );
@@ -67,7 +65,6 @@ class NominatimApiClient {
     bool? polygonSvg,
     bool? polygonText,
     double? polygonThreshold,
-    bool? debug,
   }) async {
     final response = await _client.get(
       Uri.https(
@@ -87,7 +84,6 @@ class NominatimApiClient {
           if (polygonText != null) 'polygon_text': polygonText ? '1' : '0',
           if (polygonThreshold != null)
             'polygon_threshold': polygonThreshold.toString(),
-          if (debug != null) 'debug': debug ? '1' : '0',
         },
       ),
     );
@@ -113,7 +109,6 @@ class NominatimApiClient {
     bool? polygonSvg,
     bool? polygonText,
     double? polygonThreshold,
-    bool? debug,
   }) async {
     final response = await _client.get(
       Uri.https(
@@ -136,7 +131,6 @@ class NominatimApiClient {
           if (polygonText != null) 'polygon_text': polygonText ? '1' : '0',
           if (polygonThreshold != null)
             'polygon_threshold': polygonThreshold.toString(),
-          if (debug != null) 'debug': debug ? '1' : '0',
         },
       ),
     );
@@ -172,7 +166,6 @@ class NominatimApiClient {
     bool? polygonText,
     double? polygonThreshold,
     bool? dedupe,
-    bool? debug,
   }) async {
     final response = await _client.get(
       Uri.https(
@@ -208,7 +201,6 @@ class NominatimApiClient {
           if (polygonThreshold != null)
             'polygon_threshold': polygonThreshold.toString(),
           if (dedupe != null) 'dedupe': dedupe ? '1' : '0',
-          if (debug != null) 'debug': debug ? '1' : '0',
         },
       ),
     );
