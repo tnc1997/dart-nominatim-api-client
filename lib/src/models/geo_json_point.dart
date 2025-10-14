@@ -1,13 +1,15 @@
-class GeoJsonPoint {
-  List<double>? boundingBox;
+import 'geo_json.dart';
+
+class GeoJsonPoint extends GeoJson {
   List<double>? coordinates;
-  String? type;
 
   GeoJsonPoint({
-    this.boundingBox,
+    List<double>? boundingBox,
     this.coordinates,
-    this.type,
-  });
+  }) : super(
+          boundingBox: boundingBox,
+          type: 'Point',
+        );
 
   factory GeoJsonPoint.fromJson(
     Map<String, dynamic> json,
@@ -19,10 +21,10 @@ class GeoJsonPoint {
       coordinates: (json['coordinates'] as List<dynamic>?)
           ?.map((e) => (e as num).toDouble())
           .toList(),
-      type: json['type'] as String?,
     );
   }
 
+  @override
   Map<String, dynamic> toJson() {
     return {
       'bbox': boundingBox,

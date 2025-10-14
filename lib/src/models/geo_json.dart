@@ -1,26 +1,28 @@
-class GeoJson {
-  List<List<List<double>>>? coordinates;
-  String? type;
+import 'geo_json_point.dart';
+
+abstract class GeoJson {
+  List<double>? boundingBox;
+  String type;
 
   GeoJson({
-    this.coordinates,
-    this.type,
+    this.boundingBox,
+    required this.type,
   });
 
   factory GeoJson.fromJson(
     Map<String, dynamic> json,
   ) {
-    return GeoJson(
-      coordinates: json['coordinates'] != null
-          ? List<List<List<double>>>.from(json['coordinates'])
-          : null,
-      type: json['type'] as String?,
-    );
+    switch (json['type']) {
+      case 'Point':
+        return GeoJsonPoint.fromJson(json);
+      default:
+        throw ArgumentError.value(json['type'], 'type');
+    }
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'coordinates': coordinates,
+      'bbox': boundingBox,
       'type': type,
     };
   }
