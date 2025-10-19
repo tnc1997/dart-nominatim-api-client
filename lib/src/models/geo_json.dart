@@ -1,4 +1,5 @@
 import 'geo_json_feature.dart';
+import 'geo_json_feature_collection.dart';
 import 'geo_json_point.dart';
 
 abstract class GeoJson {
@@ -16,6 +17,8 @@ abstract class GeoJson {
     switch (json['type']) {
       case 'Feature':
         return GeoJsonFeature.fromJson(json);
+      case 'FeatureCollection':
+        return GeoJsonFeatureCollection.fromJson(json);
       case 'Point':
         return GeoJsonPoint.fromJson(json);
       default:

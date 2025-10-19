@@ -9,6 +9,7 @@ export 'src/models/address_line.dart';
 export 'src/models/details_result.dart';
 export 'src/models/geo_json.dart';
 export 'src/models/geo_json_feature.dart';
+export 'src/models/geo_json_feature_collection.dart';
 export 'src/models/geo_json_line_string.dart';
 export 'src/models/geo_json_point.dart';
 export 'src/models/keyword.dart';
