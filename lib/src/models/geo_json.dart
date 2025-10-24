@@ -4,6 +4,7 @@ import 'geo_json_geometry_collection.dart';
 import 'geo_json_line_string.dart';
 import 'geo_json_multi_line_string.dart';
 import 'geo_json_multi_point.dart';
+import 'geo_json_multi_polygon.dart';
 import 'geo_json_point.dart';
 
 abstract class GeoJson {
@@ -31,6 +32,8 @@ abstract class GeoJson {
         return GeoJsonMultiLineString.fromJson(json);
       case 'MultiPoint':
         return GeoJsonMultiPoint.fromJson(json);
+      case 'MultiPolygon':
+        return GeoJsonMultiPolygon.fromJson(json);
       case 'Point':
         return GeoJsonPoint.fromJson(json);
       default:
