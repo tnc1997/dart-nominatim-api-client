@@ -6,6 +6,7 @@ import 'geo_json_multi_line_string.dart';
 import 'geo_json_multi_point.dart';
 import 'geo_json_multi_polygon.dart';
 import 'geo_json_point.dart';
+import 'geo_json_polygon.dart';
 
 abstract class GeoJson {
   List<double>? boundingBox;
@@ -36,6 +37,8 @@ abstract class GeoJson {
         return GeoJsonMultiPolygon.fromJson(json);
       case 'Point':
         return GeoJsonPoint.fromJson(json);
+      case 'Polygon':
+        return GeoJsonPolygon.fromJson(json);
       default:
         throw ArgumentError.value(json['type'], 'type');
     }

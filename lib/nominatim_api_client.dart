@@ -16,6 +16,7 @@ export 'src/models/geo_json_multi_line_string.dart';
 export 'src/models/geo_json_multi_point.dart';
 export 'src/models/geo_json_multi_polygon.dart';
 export 'src/models/geo_json_point.dart';
+export 'src/models/geo_json_polygon.dart';
 export 'src/models/keyword.dart';
 export 'src/models/lookup_result.dart';
 export 'src/models/name_keyword.dart';
