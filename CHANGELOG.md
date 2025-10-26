@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.0](https://github.com/tnc1997/dart-nominatim-api-client/compare/v0.4.0...v0.5.0) (2025-10-26)
+
+### ⚠ BREAKING CHANGES
+
+* The `GeoJson` model has been converted from a class to an abstract class.
+* The `debug` parameter has been removed from the endpoints.
+
+### Code Refactoring
+
+* add geo json feature collection model ([147163f](https://github.com/tnc1997/dart-nominatim-api-client/commit/147163fd5cf172c449928e778b4139736ed345e1))
+* add geo json feature model ([1f9edb5](https://github.com/tnc1997/dart-nominatim-api-client/commit/1f9edb51c50d1d492db9ca1dfe101b062367235f))
+* add geo json geometry collection model ([b14d07f](https://github.com/tnc1997/dart-nominatim-api-client/commit/b14d07fd39abf0ccc83a31649e9c6cf574f78df4))
+* add geo json line string model ([9967d94](https://github.com/tnc1997/dart-nominatim-api-client/commit/9967d94f1e0e210a43ae044b0a48806d55d15b23))
+* add geo json multi line string model ([4d4cdef](https://github.com/tnc1997/dart-nominatim-api-client/commit/4d4cdef7b7ba0e11c94c56e23687094b5f8a8f7a))
+* add geo json multi point model ([4a50dc4](https://github.com/tnc1997/dart-nominatim-api-client/commit/4a50dc45857d37bdb9ae1f3a77d29ddcda454123))
+* add geo json multi polygon model ([4ec3e05](https://github.com/tnc1997/dart-nominatim-api-client/commit/4ec3e0558729ec719fd3e147619ce34905bd2d65))
+* add geo json polygon model ([112abf1](https://github.com/tnc1997/dart-nominatim-api-client/commit/112abf1cfc2b23905e1197a41eb536f8dcf71f94))
+* convert geo json model to abstract base class ([b60b1b4](https://github.com/tnc1997/dart-nominatim-api-client/commit/b60b1b41e069a4d2fd701822dc624e4b2a0b8e12))
+* remove debug parameter from endpoints ([0fb5508](https://github.com/tnc1997/dart-nominatim-api-client/commit/0fb5508f72505dc2f702933b1a11e2bd04e24181))
+
 ## [0.4.0](https://github.com/tnc1997/dart-nominatim-api-client/compare/v0.3.0...v0.4.0) (2025-10-12)
 
 ### ⚠ BREAKING CHANGES
